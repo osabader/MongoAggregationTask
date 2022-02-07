@@ -16,7 +16,7 @@ app.get("/less-visited-clients-per-day", (req, res) => {
     //limit param has been added to know how many customers should i get from the least visits customers
     //after discusion with mester mohammed khamis
     // if its not sent it will have a default value of 30
-    const limit = req.query.limit || 30;
+    const limit = parseInt(req.query.limit) || 30;
 
     async function returnresult(from, to, day, limit) {
         let client;
